@@ -5,6 +5,7 @@ import SplashScreen from './screens/Splash';
 import Welcome from './screens/Welcome';
 import SignupScreen from './screens/SignupScreen';
 import Login from './screens/Login';
+import Home from './screens/Home';
 
 
 const Stack = createStackNavigator();
@@ -41,6 +42,12 @@ const AppNavigator = () => {
                     options={{ headerShown: false }}
                 />
 
+<Stack.Screen
+                    name="Home"
+                    component={Home}
+                    options={{ headerShown: false }}
+                />
+
 
 
 
@@ -74,11 +81,7 @@ export default AppNavigator;
                     component={Materialpage}
                     options={{ headerShown: false }}
                 />
-                <Stack.Screen
-                    name="Home"
-                    component={Home}
-                    options={{ headerShown: false }}
-                />
+                
                 <Stack.Screen
                     name="APL"
                     component={APL}
