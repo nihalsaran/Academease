@@ -13,10 +13,11 @@ const APL = () => {
 
   const openLink = async (link) => {
     try {
-      const supported = await Linking.canOpenURL(link);
-  
+      const directLink = link.replace('/open', '/uc');
+      const supported = await Linking.canOpenURL(directLink);
+    
       if (supported) {
-        await Linking.openURL(link);
+        await Linking.openURL(directLink);
       } else {
         console.error('Cannot open the provided link');
       }

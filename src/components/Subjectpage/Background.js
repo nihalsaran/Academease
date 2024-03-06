@@ -5,7 +5,7 @@ import Footer from '../Facultypage/Footer'
 const Background = () => {
   return (
     <ImageBackground
-      source={require('/Users/nihalsarandasduggirala/Desktop/LearnDEI/Learnify/src/components/Subjectpage/imgbg.jpeg')} // Replace with your image path
+      source={require('/Users/nihalsarandasduggirala/Desktop/Academease/src/components/Subjectpage/imgbg.jpeg')} // Replace with your image path
       style={styles.backgroundImage}
     >
      

@@ -117,28 +117,28 @@ const SignupScreen = () => {
     <View style={styles.container}>
 
       <Text style={styles.title}>Sign Up</Text>
-      <TextInput
+      <TextInput placeholderTextColor={'black'}
         style={styles.input}
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
       />
-      <TextInput
+      <TextInput placeholderTextColor={'black'}
         style={styles.input}
         placeholder="Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
-      <TextInput
+      <TextInput placeholderTextColor={'black'}
         style={styles.input}
         placeholder="Confirm Password"
         value={confirmPassword}
         onChangeText={setConfirmPassword}
         secureTextEntry
       />
-      <TextInput
+      <TextInput placeholderTextColor={'black'}
         style={styles.input}
         placeholder="Roll Number"
         value={rollNumber}
@@ -146,14 +146,14 @@ const SignupScreen = () => {
         keyboardType="number-pad"
       />
 
-      <TextInput
+      <TextInput placeholderTextColor={'black'}
         style={styles.input}
         placeholder="Phone Number"
         value={phoneNumber}
         onChangeText={setPhoneNumber}
         keyboardType="number-pad"
       />
-      <TextInput
+      <TextInput placeholderTextColor={'black'}
         style={styles.input}
         placeholder="Full Name"
         value={name}

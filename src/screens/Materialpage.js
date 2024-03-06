@@ -7,7 +7,7 @@ import Subjects from '../components/Materialpage/Subjects';
 const Materialpage = () => {
   return (
     <ImageBackground
-      source={require('/Users/nihalsarandasduggirala/Desktop/LearnDEI/Learnify/src/components/Materialpage/background.jpeg')} // Replace with your image path
+      source={require('/Users/nihalsarandasduggirala/Desktop/Academease/src/components/Materialpage/background.jpeg')} // Replace with your image path
       style={styles.backgroundImage}
     >
       <View style={styles.container}>

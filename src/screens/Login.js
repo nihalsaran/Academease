@@ -196,7 +196,7 @@ const styles = {
     backgroundColor: 'rgba(255,255,255,0.77)',
     color: '#1a1a1c',
     fontSize: 16,
-    fontFamily: fontFamily,
+    
     lineHeight: 29,
     textAlign: 'center',
   },

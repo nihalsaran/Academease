@@ -7,6 +7,7 @@ import Homepagecomp2 from '../components/Homepage/Homepagecomp2';
 import Homepagecomp3 from '../components/Homepage/Homepagecomp3';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import subjectsData from './subjects.json';
 
 
 const styles = StyleSheet.create({
@@ -87,20 +88,32 @@ const Home = (props) => {
 
   // Function to fetch subjects data and update Firestore when the component mounts
   useEffect(() => {
-    const loggedInUserId = getCurrentUserId(); // Retrieve the current logged-in user's ID
+    const loggedInUserId = getCurrentUserId();
 
     if (loggedInUserId) {
       checkIfDataUploaded(loggedInUserId).then((isUploaded) => {
         if (!isUploaded) {
-          // Assuming you have the subjects' data available
-          const subjectsData = require('./subjects.json'); // Replace with your subjects data
           uploadSubjectsToStudent(loggedInUserId, subjectsData);
         } else {
-          setDataUploaded(true); // Set flag to true if data is already uploaded
+          setDataUploaded(true);
         }
       });
     }
-  }, []); // Run once on component mount
+  }, []);
+
+  // Watch for changes to the subjects.json file
+  useEffect(() => {
+    const updateSubjectsData = () => {
+      // Reload the JSON data when the file changes
+      const updatedSubjectsData = require('./subjects.json');
+      uploadSubjectsToStudent(getCurrentUserId(), updatedSubjectsData);
+    };
+
+    // Simulate watching for changes by reloading the data every 60 seconds
+    const interval = setInterval(updateSubjectsData, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <View style={styles.container}>
       <Background />
@@ -108,8 +121,8 @@ const Home = (props) => {
       <View style={styles.content}>
         {props.children}
       </View>
-      
       <Footer />
+    
       <View  style={styles.homepagecomp1}>
         <Homepagecomp1  />
        
